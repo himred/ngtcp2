@@ -42,7 +42,8 @@ void ngtcp2_settings_default_versioned(int settings_version,
     /* fall through */
   case NGTCP2_SETTINGS_V2:
   case NGTCP2_SETTINGS_V1:
-    settings->cc_algo = NGTCP2_CC_ALGO_CUBIC;
+    //settings->cc_algo = NGTCP2_CC_ALGO_CUBIC;
+    settings->cc_algo = NGTCP2_CC_ALGO_RENO;
     settings->initial_rtt = NGTCP2_DEFAULT_INITIAL_RTT;
     settings->ack_thresh = 2;
     settings->max_tx_udp_payload_size = 1500 - 48;
