@@ -162,7 +162,6 @@ void ngtcp2_cc_reno_cc_congestion_event(ngtcp2_cc *cc, ngtcp2_conn_stat *cstat,
 
   cstat->congestion_recovery_start_ts = ts;
   cstat->cwnd >>= NGTCP2_LOSS_REDUCTION_FACTOR_BITS;
-  //cstat->cwnd *= 1.8;
   min_cwnd = 2 * cstat->max_tx_udp_payload_size;
   cstat->cwnd = ngtcp2_max_uint64(cstat->cwnd, min_cwnd);
   cstat->ssthresh = cstat->cwnd;
